@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,13 +23,17 @@ public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
 
+    private final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(DepartmentController.class);
+
     @PostMapping("/departments")
     public Department savDepartment(@Valid @RequestBody Department department) {
+        LOGGER.info("Inside saveDepartment method of DepartmentController Class");
         return departmentService.saveDepartment(department);
     }
 
     @GetMapping("/departments")
     public List<Department> fetchDepartmentList() {
+        LOGGER.info("Inside fetchDepartmentList method of DepartmentController Class");
         return departmentService.fetchDepartmentList();
     }
 

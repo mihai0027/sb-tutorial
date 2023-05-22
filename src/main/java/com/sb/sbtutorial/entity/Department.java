@@ -24,8 +24,8 @@ public class Department {
     private Long departmentId;
 
     @NotBlank(message = "Please add the Department Name")
-    @Length(max = 5, min = 1)
-    @Size(max = 10, min = 0)
+    // @Length(max = 5, min = 1)
+    // @Size(max = 10, min = 0)
     private String departmentName;
     private String departmentAdress;
     private String departmentCode;
