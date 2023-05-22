@@ -1,11 +1,11 @@
 package com.sb.sbtutorial.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+// import org.springframework.stereotype.Repository;
 
 import com.sb.sbtutorial.entity.Department;
 
-@Repository
+// @Repository
 public interface DepartmentRepository extends JpaRepository<Department, Long> {
     
 
