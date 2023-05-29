@@ -38,7 +38,4 @@ public class DepartmentRepositoryTest {
         assertEquals(department.getDepartmentName(), "Mechanical Engineering");
     }
 
-
-
-
 }
