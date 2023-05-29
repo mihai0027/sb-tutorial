@@ -6,12 +6,14 @@ spring:
         active: dev
 
 ---
-# use this variable to expose all actuator endpoints
 management:
   endpoints:
     web:
       exposure:
+        # use this variable to expose all actuator endpoints
         include: "*"
+        # to exclude certain endpoint
+        exclude: "env,beans"
 
 spring:
     config:
