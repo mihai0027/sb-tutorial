@@ -1,6 +1,16 @@
 server:
     port: 8008
+
 spring:
+    profiles:
+        active: dev
+
+---
+
+spring:
+    config:
+        activate:
+            on-profile: dev
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
         password: root1234
@@ -11,4 +21,40 @@ spring:
             ddl-auto: update
         show-sql: true
 welcome:
-    message: 'Hi from a Demo App!'
+    message: 'Hi from a Demo App! from dev'
+
+---
+
+spring:
+    config:
+        activate:
+            on-profile: qa
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: root1234
+        url: jdbc:mysql://localhost:3306/ddbb-spring
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+welcome:
+    message: 'Hi from a Demo App! from qa'
+
+---
+
+spring:
+    config:
+        activate:
+            on-profile: prod
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: root1234
+        url: jdbc:mysql://localhost:3306/ddbb-spring
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+welcome:
+    message: 'Hi from a Demo App! from prod'
